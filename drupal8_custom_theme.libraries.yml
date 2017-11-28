@@ -31,7 +31,6 @@ global-components:
     - core/drupalSettings
     - core/jquery.once
 
-
 flexslider:
   version: 1.x
   css:
@@ -41,3 +40,9 @@ flexslider:
     includes/flexslider/js/jquery.flexslider-min.js: {}
   dependencies:
     - core/jquery
+
+fontawesome:
+  version: 1.x
+  css:
+    theme:
+      includes/fontawesome/css/font-awesome.css: {}

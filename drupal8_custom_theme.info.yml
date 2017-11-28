@@ -7,6 +7,7 @@ package: core
 #Libraries
 libraries:
   - drupal8_custom_theme/bootstrap
+  - drupal8_custom_theme/fontawesome
   - drupal8_custom_theme/flexslider
   - drupal8_custom_theme/global-components
 
