@@ -269,20 +269,21 @@ function drupal8_custom_theme_form_system_theme_settings_alter(&$form, \Drupal\C
       '#title' => t('Slide '.$i.' URL'),
       '#default_value' => theme_get_setting('slide_url_' . $i,'drupal8_custom_theme'),
     );
-  }
 
-  // Make the uploaded images permanent.
-  $image = theme_get_setting('slide_image_path'.$i,'drupal8_custom_theme');
-  if(!empty($image)){
-    $file = File::load($image[0]);
-    $file->status = FILE_STATUS_PERMANENT;
-    $file->save();
-    $file_usage = \Drupal::service('file.usage');
-    $file_usage_check = $file_usage->listUsage($file);
-    if (empty($file_usage_check)) {
-      $file_usage->add($file, 'drupal8_custom_theme', 'theme', $image[0]);
+    // Make the uploaded images permanent.
+    $image = theme_get_setting('slide_image_path'.$i,'drupal8_custom_theme');
+    if(!empty($image)){
+      $file = File::load($image[0]);
+      $file->status = FILE_STATUS_PERMANENT;
+      $file->save();
+      $file_usage = \Drupal::service('file.usage');
+      $file_usage_check = $file_usage->listUsage($file);
+      if (empty($file_usage_check)) {
+        $file_usage->add($file, 'drupal8_custom_theme', 'theme', $image[0]);
+      }
     }
-  }
+
+  }  
   
 }
 
