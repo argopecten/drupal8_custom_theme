@@ -143,7 +143,7 @@ function drupal8_custom_theme_get_slider_content() {
       $path = base_path() . drupal_get_path('theme', 'drupal8_custom_theme') . theme_get_setting('slide_image_path_' . $i, 'drupal8_custom_theme');
     }
     $slider_content[$i] = '<li>
-      <img src="' . $path . '" alt="Slider Banner" />
+      <a href=' . theme_get_setting('slide_url_' . $i, 'drupal8_custom_theme') . ' class="more-link"> <img src="' . $path . '" alt="Slider Banner" /> </a>
       <div class="flex-caption">
         <h2>' . theme_get_setting('slide_title_' . $i, 'drupal8_custom_theme').'</h2>
         <p class="flex-description">' . theme_get_setting('slide_description_' . $i, 'drupal8_custom_theme').'</p>
